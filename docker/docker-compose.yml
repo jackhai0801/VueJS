@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  web:
+    container_name: vuejs
+    build: ./web
+    ports:
+      - "8080:8080"
+    privileged: true
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../workspace:/var/www
+    command: /bin/sh

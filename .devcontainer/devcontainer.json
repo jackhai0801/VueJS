@@ -1,0 +1,7 @@
+{
+    "name": "My Project Node.js Vue.js",
+    "dockerComposeFile": "../docker/docker-compose.yml",
+    "service": "web",
+    "workspaceFolder": "/var/www",
+    "shutdownAction": "stopCompose"
+}
