@@ -7,7 +7,8 @@
     <body>
         <div id='app'>
             <router-link to='/top'>Go to Top</router-link> / 
-            <router-link to='/users/123'>Go to User</router-link>
+            <!-- <router-link to='/users/123'>Go to User</router-link> -->
+            <router-link :to='{name: "user", params: {userId: 123 }}'>Go to User</router-link>
             <hr>
             <router-view></router-view>
         </div>
@@ -27,6 +28,7 @@
                     },
                     {
                         path: '/users/:userId',
+                        name: 'user',
                         component: User
                     }
                 ]
