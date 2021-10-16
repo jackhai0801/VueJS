@@ -7,18 +7,18 @@
     <body>
         <div id='app'>
             <router-link to='/top'>Go to Top</router-link> / 
-            <router-link to='/users'>Go to User</router-link>
+            <router-link to='/users/123'>Go to User</router-link>
             <hr>
             <router-view></router-view>
         </div>
 
-
+        
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!-- <script src="https://unpkg.com/vue@2.6.10"></script> -->
         <script src="https://unpkg.com/vue-router@3.0.6"></script>
         <script>
             const Top = { template: '<div><h2>Top</h2></div>' }
-            const User = { template: '<div><h2>User</h2></div>' }
+            const User = { template: '<div><h2>User {{$route.params.userId}}</h2></div>' }
             const router = new VueRouter({
                 routes: [
                     {
@@ -26,15 +26,15 @@
                         component: Top
                     },
                     {
-                        path: '/users',
+                        path: '/users/:userId',
                         component: User
                     }
                 ]
             })
-
+            
             const app = new Vue({
                 router: router
             }).$mount('#app')
         </script>
     </body>
-</html> 
+</html>
