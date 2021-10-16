@@ -42,7 +42,7 @@
         const router = new VueRouter({
             routes: [
                 {
-                    path: '/users/userId', component: User,
+                    path: '/users/:userId', component: User,
                     children: [
                         { path: 'profile', component: Profile },
                         { path: 'posts', component: Posts },
