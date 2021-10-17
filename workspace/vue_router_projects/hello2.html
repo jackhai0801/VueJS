@@ -6,36 +6,20 @@
     </head>
     <body>
         <div id='app'>
-            <router-link to='/top'>Go to Top</router-link> / 
-            <router-link to='/users'>Go to User</router-link>
-            <hr>
             <router-view></router-view>
         </div>
-
-
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
         <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
         <script>
             const Hello = { template: '<div><h1>Hello World</h1></div>' }
-            const Top = { template: '<div><h2>Top</h2></div>' }
-            const User = { template: '<div><h2>User</h2></div>' }
             const router = new VueRouter({
                 routes: [
                 {
-                        path: '/hello',
+                        path: '/',
                         component: Hello
-                    },
-                    {
-                        path: '/top',
-                        component: Top
-                    },
-                    {
-                        path: '/users',
-                        component: User
                     }
                 ]
             })
-
             const app = new Vue({
                 router: router
             }).$mount('#app')
